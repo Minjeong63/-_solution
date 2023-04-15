@@ -20,16 +20,14 @@ lengths.sort((a, b) => a - b);
 if (inclinations[0] === inclinations[1] && inclinations[1] === inclinations[2]) console.log('X');
 else if (lengths[0] === lengths[1] && lengths[1] === lengths[2]) console.log('JungTriangle');
 else if (lengths[0] === lengths[1]) {
-  if (lengths[2] === Math.sqrt(Math.pow(lengths[0], 2) + Math.pow(lengths[1], 2)))
-    console.log('Jikkak2Triangle');
-  else if (lengths[2] > Math.sqrt(Math.pow(lengths[0], 2) + Math.pow(lengths[1], 2)))
-    console.log('Dunkak2Triangle');
+  if (Math.pow(lengths[2], 2) === 2 * Math.pow(lengths[0], 2)) console.log('Jikkak2Triangle');
+  else if (Math.pow(lengths[2], 2) > 2 * Math.pow(lengths[0], 2)) console.log('Dunkak2Triangle');
   else console.log('Yeahkak2Triangle');
 } else if (lengths[1] === lengths[2]) console.log('Yeahkak2Triangle');
 else {
-  if (lengths[2] === Math.sqrt(Math.pow(lengths[0], 2) + Math.pow(lengths[1], 2)))
-    console.log('JikkakTriangle');
-  else if (lengths[2] > Math.sqrt(Math.pow(lengths[0], 2) + Math.pow(lengths[1], 2)))
+  if (Math.pow(lengths[2], 2) > Math.pow(lengths[0], 2) + Math.pow(lengths[1], 2))
     console.log('DunkakTriangle');
+  else if (Math.pow(lengths[2], 2) === Math.pow(lengths[0], 2) + Math.pow(lengths[1], 2))
+    console.log('JikkakTriangle');
   else console.log('YeahkakTriangle');
 }
